@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package userservice;
+option go_package = "./userpb";
+
+message singleUserInfoRequest {
+    int32 id = 1;
+}
+
+message UserInfo {
+    int32 Id = 1 ;
+    string Fname=2;
+	string City=3; 
+	int32  Phone=4;
+	float Height=5;
+	bool Married=6;
+}
+
+message singleUserInfoResponse {
+    UserInfo userDetails = 1;
+}
+message multiUserInfoRequest {
+    repeated int32 id = 1;
+}
+message multiUserInfoResponse {
+    repeated UserInfo userDetails = 1;
+}
+service getUserInfoService {
+    rpc GetSingleUserInfo(singleUserInfoRequest) returns (singleUserInfoResponse) {};
+    rpc GetMultipleUserInfo(multiUserInfoRequest) returns (multiUserInfoResponse) {};
+}

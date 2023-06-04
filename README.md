@@ -1,4 +1,6 @@
-# TOTALITY CORP Assignment
+# RPC
+
+This project is built for learning rpc basics
 
 ## Requirements:
 
